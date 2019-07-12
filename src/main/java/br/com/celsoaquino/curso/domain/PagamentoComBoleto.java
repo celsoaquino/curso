@@ -1,6 +1,7 @@
 package br.com.celsoaquino.curso.domain;
 
 import br.com.celsoaquino.curso.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.Entity;
 import java.util.Date;
@@ -8,8 +9,14 @@ import java.util.Date;
 @Entity
 public class PagamentoComBoleto extends Pagamento{
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataVencimento;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataPagamento;
+
+    public PagamentoComBoleto() {
+    }
 
     public PagamentoComBoleto(Integer id, EstadoPagamento estadoPagamento, Pedido pedido, Date dataVencimento, Date dataPagamento) {
         super(id, estadoPagamento, pedido);
