@@ -3,7 +3,6 @@ package br.com.celsoaquino.curso.services;
 import br.com.celsoaquino.curso.domain.Categoria;
 import br.com.celsoaquino.curso.repositories.CategoriaRepository;
 import br.com.celsoaquino.curso.services.exceptions.ObjectNotFoundExcepion;
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
