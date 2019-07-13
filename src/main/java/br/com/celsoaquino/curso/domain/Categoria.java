@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TB_CATEGORIA")
 public class Categoria implements Serializable {
 
     @Id
