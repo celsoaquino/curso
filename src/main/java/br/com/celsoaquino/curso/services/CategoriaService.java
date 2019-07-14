@@ -1,6 +1,7 @@
 package br.com.celsoaquino.curso.services;
 
 import br.com.celsoaquino.curso.domain.Categoria;
+import br.com.celsoaquino.curso.dto.CategoriaDTO;
 import br.com.celsoaquino.curso.repositories.CategoriaRepository;
 import br.com.celsoaquino.curso.services.exceptions.DataIntegrityException;
 import br.com.celsoaquino.curso.services.exceptions.ObjectNotFoundExcepion;
@@ -52,5 +53,9 @@ public class CategoriaService {
     public Page<Categoria> findPage(Integer page, Integer linesPerPage, String orderBy, String direction){
         PageRequest pageRequest = new PageRequest(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
         return categoriaRepository.findAll(pageRequest);
+    }
+
+    public Categoria fromDTO(CategoriaDTO objDto){
+        return new Categoria(objDto.getId(), objDto.getNome());
     }
 }
